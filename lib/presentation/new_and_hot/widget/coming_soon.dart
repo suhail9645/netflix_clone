@@ -29,13 +29,7 @@ class ComingSoonWidget extends StatelessWidget {
                   color: kgrey,
                 ),
               ),
-            const  Text(
-                '11',
-                style: TextStyle(
-                    letterSpacing: 4,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-              )
+            
             ],
           ),
         ),
@@ -53,7 +47,7 @@ class ComingSoonWidget extends StatelessWidget {
                     movie.title!,
                     overflow: TextOverflow.visible,
                     style: GoogleFonts.kaushanScript(
-                        fontSize: 10, fontWeight: FontWeight.bold),
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   const CustomButton(
@@ -72,7 +66,7 @@ class ComingSoonWidget extends StatelessWidget {
                   boxForSpace
                 ],
               ),
-              const Text('Coming on Friday'),
+               Text('Coming on ${movie.releaseDate}'),
               boxForSpaceHeight,
               Text(
                 movie.title!,

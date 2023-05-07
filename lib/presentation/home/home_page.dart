@@ -125,17 +125,24 @@ class BackgroundCard extends StatelessWidget {
     return Stack(
       children: [
         CarouselSlider(
-            items: HomeFunction.trending.map((item) =>  Container(
-        
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  'https://image.tmdb.org/t/p/w500${item.backdropPath}'),
-            ),
-          ),
-        ),).toList(),
-            options: CarouselOptions(height: 600)),
+            items: HomeFunction.trending
+                .map(
+                  (item) => Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            'https://image.tmdb.org/t/p/w500${item.posterPath}'),
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+            options: CarouselOptions(
+                height: 600,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                initialPage: 1)),
         Positioned(
           bottom: 0,
           left: 0,
@@ -214,7 +221,7 @@ class NumberRow extends StatelessWidget {
             children: List.generate(
                 10,
                 (index) => NumberCard(
-                      index: index,
+                      index: index, image: HomeFunction.comingSoon[index].posterPath!,
                     )),
           ),
         )
