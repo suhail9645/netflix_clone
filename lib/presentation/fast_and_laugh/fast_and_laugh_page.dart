@@ -6,14 +6,21 @@ class ScreenFastLaugh extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List videoUrl=[
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
+];
     return Scaffold(
         body: SafeArea(
       child: PageView(
         scrollDirection: Axis.vertical,
         children: List.generate(
-          10,
+          videoUrl.length,
           (index) => VideoListItem(
-            index: index,
+            index: index, videoUrl: videoUrl[index],
           ),
         ),
       ),

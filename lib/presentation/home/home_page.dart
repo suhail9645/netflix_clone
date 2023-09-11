@@ -74,7 +74,7 @@ class ScreenHome extends StatelessWidget {
                                   height: 30,
                                   width: 30,
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 GestureDetector(
                                   onTap: () async {
                                     await HomeFunction.getTrending();
@@ -221,7 +221,8 @@ class NumberRow extends StatelessWidget {
             children: List.generate(
                 10,
                 (index) => NumberCard(
-                      index: index, image: HomeFunction.comingSoon[index].posterPath!,
+                      index: index,
+                      image: HomeFunction.comingSoon[index].posterPath!,
                     )),
           ),
         )

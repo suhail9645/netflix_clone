@@ -16,9 +16,11 @@ class HomeFunction{
           if(response.statusCode==200){
              Map<String, dynamic> data = jsonDecode(response.body);
              Pages pages=Pages.fromJson(data);    
-             image=pages.results![5].posterPath!; 
-             trending=pages.results!;        
+            //  image=pages.results![5].posterPath!; 
+             trending=pages.results!; 
+                 
           }
+          
     }catch(e){
       print(e);
     }
